@@ -1,6 +1,11 @@
 integrations:
-  - jenkins: true
-  - gitlab: false
-  - github: false
-  - argocd: false
-  - circleci: false
+  jenkins:
+    - host: localhost:8080
+      username: ${JENKINS_USERNAME}
+      password: ${JENKINS_TOKEN}
+  ### Example for how to add your Github Actions instance using the API:
+  # - host: github.com
+  #   username: guest
+  #   password: guest
+
+
