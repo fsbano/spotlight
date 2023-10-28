@@ -1,4 +1,4 @@
-plugins:
+integrations:
   - jenkins: true
   - gitlab: false
   - github: false

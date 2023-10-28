@@ -6,10 +6,10 @@ const app = express();
 
 try { 
   const config = yaml.load(fs.readFileSync('./spotlight.yaml'))
-  for ( const plugin of config.plugins ) {
-    for (const isEnabled of Object.values(plugin) ) {
+  for ( const integrations of config.integrations ) {
+    for (const isEnabled of Object.values(integrations) ) {
       if ( isEnabled == true ) {
-        const extensions = require('./plugins/' + Object.keys(plugin));
+        const extensions = require('./plugins/' + Object.keys(integrations));
         if (typeof extensions.execute === 'function') {
           app.get(`/api/v1/${extensions.name.toLowerCase().replace(/\s+/g, '-')}`, (req, res) => {
             res.send(extensions.execute());
