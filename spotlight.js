@@ -7,7 +7,8 @@ const app = express();
 try { 
   /*
     It reads a configuration from a YAML file, 
-    dynamically loads plugins based on the configuration and sets up routes to handle specific API endpoints.
+    dynamically loads plugins based on the configuration and 
+    sets up routes to handle specific API endpoints.
   */
   const config = yaml.load(fs.readFileSync('./spotlight.yaml'))
   Object.keys(config.integrations).map(function(name) {
