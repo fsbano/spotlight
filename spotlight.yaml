@@ -1,0 +1,6 @@
+plugins:
+  - jenkins: true
+  - gitlab: false
+  - github: false
+  - argocd: false
+  - circleci: false
